@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      -master
+      
+jobs:
+  build:
+    runs-on:  ubuntu-latest
+    
+    steps:
+      -uses: actions/checkout@v3  
+      -name: "login"
+      run: docker login --username mohmedsabry --password dckr_pat_CrI4a0RzYdpEtSaXBwU3onMO5Gg
+      
+      -name: "build "
+       run:  docker build -t mohmedsabry/img .
+       
+       -name: "push"
+       run: docker push mohmedsabry/img
