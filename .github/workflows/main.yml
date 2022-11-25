@@ -16,7 +16,7 @@ jobs:
       -name: "build img "
       
       run:  docker build -t mohmedsabry/img .
-       
-       -name: "push"
+      
+      -name: "push"
       
       run: docker push mohmedsabry/img
